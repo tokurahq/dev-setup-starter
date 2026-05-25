@@ -94,26 +94,6 @@ fi
 # -----------------------------------------------------------------------
 cat <<'EOF'
 
-==> Prerequisites installed. Three steps remain:
-
-  1. Reload your shell so brew + gh are on PATH in this Terminal:
-
-        source ~/.zshrc
-
-     (Or just close this Terminal window and open a fresh one — either works.
-     Without this step, the next command will fail with "gh: command not
-     found" because the brew PATH change only takes effect in new shells.)
-
-  2. Authenticate the GitHub CLI:
-
-        gh auth login -h github.com
-
-     Choose HTTPS + browser login. Your account must be in the `cureneo` org.
-
-  3. 1Password vault access: confirm an admin has added you to the shared
-     `Cureneo` vault, then enable CLI integration in the desktop app
-     (1Password → Settings → Developer → Integrate with 1Password CLI).
-
-Then follow README §C (Installation) to clone the setup repo and run install.sh.
+==> Prerequisites installed
 
 EOF
