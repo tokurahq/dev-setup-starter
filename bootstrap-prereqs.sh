@@ -4,7 +4,11 @@
 # steps from the README so non-technical team members only need to paste
 # one curl-piped command into Terminal:
 #
-#   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/cureneo/CureneoSetup/main/bin/bootstrap-prereqs.sh)"
+#   curl -fsSL https://raw.githubusercontent.com/cureneo/CureneoSetup-StarterPublic/main/bootstrap-prereqs.sh -o /tmp/cureneo.sh && bash /tmp/cureneo.sh
+#
+# Lives in cureneo/CureneoSetup-StarterPublic (public) — the private
+# CureneoSetup repo can't host it because team members don't yet have a
+# GitHub token when they need to run this.
 #
 # What it does:
 #   [1/3] Install Homebrew (if missing).
@@ -90,15 +94,23 @@ fi
 # -----------------------------------------------------------------------
 cat <<'EOF'
 
-==> Prerequisites installed. Two manual steps remain (browser + admin involvement):
+==> Prerequisites installed. Three steps remain:
 
-  1. Authenticate the GitHub CLI:
+  1. Reload your shell so brew + gh are on PATH in this Terminal:
+
+        source ~/.zshrc
+
+     (Or just close this Terminal window and open a fresh one — either works.
+     Without this step, the next command will fail with "gh: command not
+     found" because the brew PATH change only takes effect in new shells.)
+
+  2. Authenticate the GitHub CLI:
 
         gh auth login -h github.com
 
      Choose HTTPS + browser login. Your account must be in the `cureneo` org.
 
-  2. 1Password vault access: confirm an admin has added you to the shared
+  3. 1Password vault access: confirm an admin has added you to the shared
      `Cureneo` vault, then enable CLI integration in the desktop app
      (1Password → Settings → Developer → Integrate with 1Password CLI).
 
