@@ -1,33 +1,6 @@
 #!/usr/bin/env bash
-#
-# Cureneo prerequisites bootstrap — runs the §B "One-time prerequisites"
-# steps from the README so non-technical team members only need to paste
-# one curl-piped command into Terminal:
-#
-#   curl -fsSL https://raw.githubusercontent.com/cureneo/CureneoSetup-StarterPublic/main/bootstrap-prereqs.sh -o /tmp/cureneo.sh && bash /tmp/cureneo.sh
-#
-# Lives in cureneo/CureneoSetup-StarterPublic (public) — the private
-# CureneoSetup repo can't host it because team members don't yet have a
-# GitHub token when they need to run this.
-#
-# What it does:
-#   [1/3] Install Homebrew (if missing).
-#   [2/3] Add Homebrew to PATH for the current session AND persist to
-#         ~/.zshrc — the step Homebrew's own installer only prints to
-#         stdout, which non-technical users routinely miss. Apple Silicon
-#         (/opt/homebrew) and Intel (/usr/local) both handled.
-#   [3/3] Install the GitHub CLI (gh).
-#
-# What it deliberately does NOT do:
-#   - `gh auth login` — needs the user's attention for the browser flow,
-#     and a script can't shepherd that. Printed as a clear next-step.
-#   - 1Password vault enrolment — needs an admin to add the user to the
-#     shared vault, then the user to enable CLI integration in the
-#     desktop app. Printed as a next-step.
-#   - Anything from README §C (gh repo clone, install.sh, op signin) —
-#     same reason: each needs the user's attention for prompts.
-#
-# Idempotent: safe to re-run after partial failures.
+# (Public) prerequisites bootstrap — runs the "One-time prerequisites"
+# steps from the README (see README for details)
 
 set -euo pipefail
 
