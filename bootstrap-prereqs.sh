@@ -46,7 +46,7 @@ SHELLENV_LINE="eval \"\$($BREW shellenv)\""
 if grep -qF "$BREW shellenv" "$RC" 2>/dev/null; then
   info "$RC already has the brew shellenv line."
 else
-  printf '\n# Added by cureneo bootstrap-prereqs (Homebrew PATH)\n%s\n' "$SHELLENV_LINE" >> "$RC"
+  printf '\n# Added by tokura bootstrap-prereqs (Homebrew PATH)\n%s\n' "$SHELLENV_LINE" >> "$RC"
   info "Appended brew shellenv line to $RC"
 fi
 
